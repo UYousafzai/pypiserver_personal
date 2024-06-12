@@ -7,8 +7,6 @@ version: '3.8'  # Specify a recent docker-compose version
 services:
   pypiserver:
     image: pypiserver/pypiserver:latest  # Use the same image
-    ports:
-      - "80:8080"  # Map the ports
     volumes:
       - ~/.htpasswd:/data/.htpasswd  # Mount the htpasswd file
     command: run -P .htpasswd packages  # Set the command to run
